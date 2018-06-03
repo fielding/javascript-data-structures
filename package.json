@@ -1,7 +1,7 @@
 {
   "name": "javascript-data-structures",
   "version": "0.0.1",
-  "description": "data-structures implemented in javascript",
+  "description": "an educational exercise implementing data structures in Javascript",
   "main": "index.js",
   "scripts": {
     "test": "jest",
