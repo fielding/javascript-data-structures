@@ -1,12 +1,11 @@
 /**
  * Comparator
  * @constructor
- * @param {function(a: *, b: *)} compareFunction
+ * @param {function} compareFunction
  */
 function Comparator(compareFunction) {
   this.compare = compareFunction || Comparator.defaultCompareFunction;
 }
-
 
 /**
  * defaultCompareFunction
@@ -23,9 +22,15 @@ Comparator.defaultCompareFunction = function(a, b) {
   return a < b ? -1 : 1;
 };
 
+/**
+ * equal
+ *
+ * @param a
+ * @param b
+ * @returns {number}
+ */
 Comparator.prototype.equal = function(a, b) {
   return this.compare(a, b) === 0;
 };
-
 
 module.exports = Comparator;

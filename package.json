@@ -4,7 +4,8 @@
   "description": "data-structures implemented in javascript",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "author": "Fielding Johnston <fielding@justfielding.com> (https://justfielding.com)",
   "license": "MIT",
