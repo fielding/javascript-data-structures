@@ -1,7 +1,7 @@
 /**
- * Comparator
+ * Creates a new Comparator
  * @constructor
- * @param {function} compareFunction
+ * @param {function} [compareFunction]
  */
 function Comparator(compareFunction) {
   this.compare = compareFunction || Comparator.defaultCompareFunction;
@@ -10,8 +10,8 @@ function Comparator(compareFunction) {
 /**
  * defaultCompareFunction
  *
- * @param {(string|number)} a
- * @param {(string|number)} b
+ * @param {(string|number)} a - the first item to be compared
+ * @param {(string|number)} b - the second item to be compared
  * @returns {number}
  */
 Comparator.defaultCompareFunction = function(a, b) {
@@ -25,8 +25,8 @@ Comparator.defaultCompareFunction = function(a, b) {
 /**
  * equal
  *
- * @param a
- * @param b
+ * @param a - the first item to be compared
+ * @param b - the second item to be compared
  * @returns {number}
  */
 Comparator.prototype.equal = function(a, b) {
