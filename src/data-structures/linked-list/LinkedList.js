@@ -33,10 +33,10 @@ LinkedList.prototype.length = function() {
 /**
  * find
  *
- * @param data
+ * @param {Object} findParams
  * @returns {LinkedListNode}
  */
-LinkedList.prototype.find = function(data) {
+LinkedList.prototype.find = function({ data = undefined, cb = undefined }) {
   if (!this.head) {
     return null;
   }
@@ -44,7 +44,12 @@ LinkedList.prototype.find = function(data) {
   let current = this.head;
 
   while(current) {
-    if (this.compare.equal(current.data, data)) {
+    if (cb !== undefined && cb(current.data)) {
+      return current;
+    }
+
+
+    if (data !== undefined && this.compare.equal(current.data, data)) {
       return current;
     }
 
