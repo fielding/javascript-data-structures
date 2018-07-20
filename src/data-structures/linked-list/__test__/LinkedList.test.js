@@ -11,20 +11,26 @@ describe('LinkedList', () => {
   it('should find node with specified data', () => {
     const list = new LinkedList();
 
-    expect(list.find(1)).toBeNull();
+    expect(list.find({ data: 1 })).toBeNull();
 
     list.append(1);
-    expect(list.find(1)).toBeDefined();
+    expect(list.find({ data: 1})).toBeDefined();
 
     list
       .append(2)
       .append(3);
 
-    const found = list.find(2);
+    const found = list.find({ data: 2 });
 
     expect(found.data).toBe(2);
-    expect(list.find(4)).toBeNull();
+    expect(list.find({ data: 4 })).toBeNull();
   });
+
+  it('it should find node using specified callback ', () => {
+    const implemented = false;
+    expect(implemented).toBe(true);
+  });
+
 
   it('should return the length of the linked list', () => {
     const list = new LinkedList();
