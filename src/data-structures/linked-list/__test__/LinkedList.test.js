@@ -27,8 +27,21 @@ describe('LinkedList', () => {
   });
 
   it('it should find node using specified callback ', () => {
-    const implemented = false;
-    expect(implemented).toBe(true);
+    const list = new LinkedList();
+
+    list
+      .append({key: 'test1', value: 1})
+      .append({key: 'test2', value: 2})
+      .append({key: 'test3', value: 3})
+
+    const two = list.find({ cb: data => data.key === 'test2'});
+
+    expect(two).toBeDefined();
+    expect(two.data.value).toBe(2);
+    expect(two.data.key).toBe('test2');
+    expect(list.find({ cb: data => data.key === 'test4' })).toBeNull();
+
+
   });
 
 
@@ -36,9 +49,10 @@ describe('LinkedList', () => {
     const list = new LinkedList();
     const empty = new LinkedList();
 
-    list.append(1);
-    list.append(2);
-    list.append(3);
+    list
+      .append(1)
+      .append(2)
+      .append(3);
 
     expect(empty.length()).toBe(0);
     expect(list.length()).toBe(3);
