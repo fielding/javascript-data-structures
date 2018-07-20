@@ -18,11 +18,11 @@ function LinkedList(comparatorFunction) {
  *
  * @returns {Number}
  */
-LinkedList.prototype.length = function() {
+LinkedList.prototype.length = function () {
   let length = 0;
   let current = this.head;
 
-  while(current) {
+  while (current) {
     length += 1;
     current = current.next;
   }
@@ -36,14 +36,14 @@ LinkedList.prototype.length = function() {
  * @param data
  * @returns {LinkedListNode}
  */
-LinkedList.prototype.find = function(data) {
+LinkedList.prototype.find = function (data) {
   if (!this.head) {
     return null;
   }
 
   let current = this.head;
 
-  while(current) {
+  while (current) {
     if (this.compare.equal(current.data, data)) {
       return current;
     }
@@ -60,7 +60,7 @@ LinkedList.prototype.find = function(data) {
  * @param data
  * @returns {LinkedList}
  */
-LinkedList.prototype.append = function(data) {
+LinkedList.prototype.append = function (data) {
   const appendedNode = new Node(data);
   // if head doesn't exist
   if (!this.head) {
@@ -82,10 +82,10 @@ LinkedList.prototype.append = function(data) {
  * @param data
  * @returns {LinkedList}
  */
-LinkedList.prototype.prepend = function(data) {
+LinkedList.prototype.prepend = function (data) {
   this.head = new Node(data, this.head);
   return this;
-}
+};
 
 /**
  * delete
@@ -131,12 +131,12 @@ LinkedList.prototype.delete = function (data) {
  *
  * @returns {LinkedListNode}
  */
-LinkedList.prototype.deleteTail = function() {
-  let deleted = this.tail;
+LinkedList.prototype.deleteTail = function () {
+  const deleted = this.tail;
   let current = this.head;
 
-  while(current.next.next){
-    current = current.next
+  while (current.next.next) {
+    current = current.next;
   }
 
   this.tail = current;
@@ -150,8 +150,8 @@ LinkedList.prototype.deleteTail = function() {
  *
  * @returns {LinkedListNode}
  */
-LinkedList.prototype.deleteHead = function() {
-  let deleted = this.head;
+LinkedList.prototype.deleteHead = function () {
+  const deleted = this.head;
   this.head = this.head.next;
 
   return deleted;
@@ -162,7 +162,7 @@ LinkedList.prototype.deleteHead = function() {
  *
  * @returns {LinkedList}
  */
-LinkedList.prototype.clear = function() {
+LinkedList.prototype.clear = function () {
   this.head = null;
   this.tail = null;
   return this;
@@ -173,11 +173,11 @@ LinkedList.prototype.clear = function() {
  *
  * @returns {Array}
  */
-LinkedList.prototype.toArray = function() {
+LinkedList.prototype.toArray = function () {
   const arr = [];
   let current = this.head;
 
-  while(current) {
+  while (current) {
     arr.push(current);
     current = current.next;
   }
@@ -192,9 +192,9 @@ LinkedList.prototype.toArray = function() {
  * @param length=17}={}
  * @returns {String}
  */
-LinkedList.prototype.toString = function({stringifier, length = 17} = {}) {
+LinkedList.prototype.toString = function ({ stringifier, length = 17 } = {}) {
   return this.toArray()
-    .map(n => n.toString({stringifier, length}))
+    .map(n => n.toString({ stringifier, length }))
     .join('  \u25B6  ');
 };
 
