@@ -16,7 +16,7 @@ HashTable.prototype.set = function(key, value) {
   const hash = this.hash(key);
   this.keys[key] = hash;
 
-  const bucketContainer = this.bucket[hash];
+  const bucketContainer = this.buckets[hash];
   const node = bucketContainer.find({ cb: data => data.key === key });
 
   if (!node) {
@@ -27,7 +27,7 @@ HashTable.prototype.set = function(key, value) {
 }
 
 HashTable.prototype.get = function(key) {
-  const bucketContainer = this.bucket[this.hash(key)];
+  const bucketContainer = this.buckets[this.hash(key)];
   const node = bucketContainer.find({ cb: data => data.key === key });
 
   return node ? node.data.value : undefined;
@@ -36,7 +36,7 @@ HashTable.prototype.get = function(key) {
 HashTable.prototype.delete = function(key) {
   const hash = this.hash(key);
   delete this.keys[key];
-  const bucketContainer = this.bucket[hash];
+  const bucketContainer = this.buckets[hash];
   const node = bucketContainer.find({ cb: data => data.key === key });
 
   if (node) {
@@ -47,7 +47,7 @@ HashTable.prototype.delete = function(key) {
 }
 
 HashTable.prototype.has = function(key) {
-  return Object.hasOwnProperty.call(this.keys key);
+  return Object.hasOwnProperty.call(this.keys, key);
 }
 
 
