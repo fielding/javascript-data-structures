@@ -56,7 +56,7 @@ describe('HashTable', () => {
     expect(hashTable.get('d')).toBe('gwyn');
   });
 
-  it('shouild be possible to add objects to the hash table', () => {
+  it('should be possible to add objects to the hash table', () => {
     const hashTable = new HashTable();
 
     hashTable.set('frad', { race: 'gnome', class: 'thief' });
