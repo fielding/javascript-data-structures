@@ -14,7 +14,7 @@ describe('LinkedList', () => {
     expect(list.find({ data: 1 })).toBeNull();
 
     list.append(1);
-    expect(list.find({ data: 1})).toBeDefined();
+    expect(list.find({ data: 1 })).toBeDefined();
 
     list
       .append(2)
