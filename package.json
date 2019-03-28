@@ -4,7 +4,7 @@
   "description": "an educational exercise implementing data structures in Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "docs": "jsdoc -c jsdoc.conf.json"
   },
   "author": "Fielding Johnston <fielding@justfielding.com> (https://justfielding.com)",
