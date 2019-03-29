@@ -12,8 +12,9 @@ function LinkedListNode(data, next = null) {
 /**
  * toString
  *
- * @param {function} stringifier
- * @param {number} length=0
+ * @param {Object} [config]
+ * @param {Function} [config.stringifier]
+ * @param {number} [config.length=0]
  * @returns {string}
  */
 LinkedListNode.prototype.toString = function({stringifier, length = 0} = {}) {
@@ -25,7 +26,7 @@ LinkedListNode.prototype.toString = function({stringifier, length = 0} = {}) {
 /**
  * defaultStringifier
  *
- * @param length=0
+ * @param {number} [length=0]
  * @returns {string}
  */
 LinkedListNode.prototype.defaultStringifier = function(length = 0) {
