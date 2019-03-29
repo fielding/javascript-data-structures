@@ -193,8 +193,9 @@ LinkedList.prototype.toArray = function () {
 /**
  * toString
  *
- * @param {stringifier
- * @param length=17}={}
+ * @param {Object} [config]
+ * @param {Function} [config.stringifier]
+ * @param {number} [config.length=17]
  * @returns {String}
  */
 LinkedList.prototype.toString = function ({ stringifier, length = 17 } = {}) {
